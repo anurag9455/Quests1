@@ -1,6 +1,5 @@
 # Quests1
 
-```markdown
 # LLAMA3 Streamlit App
 
 A Streamlit application that generates responses using the LLAMA3 model with both grounded and ungrounded contexts. The app uses LangChain for grounded responses and integrates with the Ollama model for generating natural language responses.
