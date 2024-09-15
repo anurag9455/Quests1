@@ -29,7 +29,7 @@ This project showcases the use of advanced NLP models (LLAMA3) to generate conte
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/llama3-streamlit-app.git
+   git clone https://github.com/anurag9455/Quests1/llama3-streamlit-app.git
    cd llama3-streamlit-app
    ```
 
@@ -101,22 +101,8 @@ To run the app in a Docker container:
 
 Contributions are welcome! Please open an issue or create a pull request if you have any suggestions or improvements.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
-For any questions or issues, please contact [yourname](mailto:youremail@example.com).
-```
+For any questions or issues, please contact [Anurag Srivastava](mailto:anuragsrivastava56789@gmail.com).
 
-### Instructions to Customize the README
-1. **Repository URL**: Replace `https://github.com/yourusername/llama3-streamlit-app.git` with your actual GitHub repository URL.
-2. **Contact Information**: Replace `[yourname](mailto:youremail@example.com)` with your actual contact information.
-3. **LICENSE**: If you have a specific license for your project, make sure to include the appropriate license file and reference in the README.
-
-### Additional Notes
-- Make sure that all the file names (`llama_streamlit_app.py`, `requirements.txt`, etc.) match those in your actual project.
-- The Docker instructions assume that you are using the Dockerfile and `requirements.txt` provided earlier.
-
-Copy this content into a file named `README.md` in the root of your project directory. This file will then be displayed as the main documentation for your GitHub repository.
