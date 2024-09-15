@@ -29,7 +29,7 @@ This project showcases the use of advanced NLP models (LLAMA3) to generate conte
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/anurag9455/Quests1/llama3-streamlit-app.git
+   git clone https://github.com/anurag9455/Quests1
    cd llama3-streamlit-app
    ```
 
