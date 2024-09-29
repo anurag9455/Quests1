@@ -44,24 +44,23 @@ llama_chain = LLMChain(llm=llama3_llm, prompt=prompt_template)
 # Function to generate an ungrounded response using Ollama's Python interface
 def ungrounded_response_with_ollama(query):
     try:
-        # Use the ollama instance to generate a response
         result = llama3_llm.invoke(query)
-        
-        # Assume result is a simple text response
         return result
-        
     except Exception as e:
         return f"Error in processing the response from Ollama: {str(e)}"
 
 # Function to generate a grounded response using LangChain with Ollama
 def grounded_response_with_langchain(query):
-    # Retrieve relevant knowledge
     knowledge = retrieve_knowledge(query)
     context = " ".join(knowledge)
     
     # Use LangChain to generate a grounded response with the context
     response = llama_chain.invoke({"context": context, "query": query})
-    return response
+    return {
+        "context": context,
+        "query": query,
+        "text": response
+    }
 
 # Step 3: Streamlit Interface
 st.title("LLM Query Interface")
@@ -76,11 +75,21 @@ if st.button("Generate Response"):
             grounded_resp = grounded_response_with_langchain(query)
             ungrounded_resp = ungrounded_response_with_ollama(query)
         
-        # Display the results
+        # Display the Grounded Response with visual improvements
         st.subheader("Grounded Response")
-        st.write(grounded_resp)
         
+        # Display context, query, and response text separately
+        st.markdown("**Context Retrieved from Knowledge Base:**")
+        st.code(grounded_resp["context"])
+
+        st.markdown("**Query:**")
+        st.code(grounded_resp["query"])
+
+        st.markdown("**Response:**")
+        st.markdown(grounded_resp["text"])
+
+        # Display the Ungrounded Response
         st.subheader("Ungrounded Response")
-        st.write(ungrounded_resp)
+        st.markdown(f"**Response**: {ungrounded_resp}")
     else:
         st.error("Please enter a query.")
